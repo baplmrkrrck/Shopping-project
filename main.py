@@ -25,6 +25,14 @@ def ReadFile():
             return returnlist
         except Exception as e:
             print("Failed: " + e)
+            
+def addItem(templist):
+    item=input("Add item \n")
+    if item=='' or item in templist:
+        print ("Item you're trying to add is blank or already in the list")
+    else:
+        templist.append(item)
+    return(templist)
 
 
 
@@ -45,7 +53,7 @@ while menuOption != '6':
     menuOption = input("Enter selection\n")
     print(menuOption)
     if menuOption == '1':
-        print("Add Item")
+        mylist=addItem(mylist)
     elif menuOption == '2':
         print("Print list")
     elif menuOption == '3':
